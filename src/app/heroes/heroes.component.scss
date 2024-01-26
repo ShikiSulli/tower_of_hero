@@ -1,0 +1,67 @@
+/* heroes.component.scss */
+
+/* Style pour le titre "My Heroes" */
+h2 {
+    font-size: 24px;
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px; /* Marge en bas pour l'espace */
+  }
+  
+  /* Style pour la liste des héros */
+  ul.heroes {
+    list-style-type: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime la marge intérieure */
+  }
+  
+  /* Style pour chaque élément de la liste des héros */
+  li {
+    margin-bottom: 10px; /* Marge en bas pour l'espace entre les éléments */
+  }
+  
+  /* Style pour le bouton */
+  button {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none; /* Supprime la bordure du bouton */
+    padding: 5px 10px; /* Espacement à l'intérieur du bouton */
+    cursor: pointer; /* Curseur de la souris en main */
+  }
+  
+  /* Style pour le badge (ID du héros) */
+  span.badge {
+    background-color: #333; /* Couleur de fond du badge */
+    color: #fff; /* Couleur du texte du badge */
+    border-radius: 4px; /* Coins arrondis du badge */
+    margin-right: 5px; /* Marge à droite du badge */
+    padding: 2px 6px; /* Espacement à l'intérieur du badge */
+  }
+  
+  /* Style pour le nom du héros */
+  span.name {
+    font-weight: bold; /* Texte en gras pour le nom du héros */
+  }
+  
+  /* Style pour les détails du héros */
+  div[role="details"] {
+    margin-top: 20px; /* Marge en haut pour l'espace entre les détails et la liste */
+  }
+  
+  /* Style pour les détails spécifiques du héros */
+  h2[role="details-title"] {
+    font-size: 20px; /* Taille de police pour le titre des détails */
+    font-weight: bold; /* Texte en gras pour le titre des détails */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 10px; /* Marge en bas pour l'espace */
+  }
+  
+  /* Style pour le champ de saisie du nom du héros */
+  label[for="hero-name"] {
+    font-weight: bold; /* Texte en gras pour le libellé du champ de saisie */
+  }
+  
+  input#hero-name {
+    width: 100%; /* Largeur à 100% du champ de saisie */
+    padding: 5px; /* Espacement à l'intérieur du champ de saisie */
+    border: 1px solid #ccc; /* Bordure du champ de saisie */
+  }
+  
