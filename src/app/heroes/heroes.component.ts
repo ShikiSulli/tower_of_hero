@@ -1,27 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; // Importez OnInit
 import { Hero } from '../hero';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Heroes } from '../mock-heroes'
-import { NgFor } from '@angular/common';
+import { Heroes } from '../mock-heroes';
+import { HeroDetailsComponent } from '../hero-details/hero-details.component';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
+  styleUrls: ['./heroes.component.scss'], 
   standalone: true,
-  imports: [CommonModule,FormsModule,NgFor],
   templateUrl: './heroes.component.html',
-  styleUrl: './heroes.component.scss'
+  imports: [CommonModule, FormsModule, HeroDetailsComponent],
 })
-export class HeroesComponent {
+export class HeroesComponent implements OnInit { // Implémentez OnInit
+  heroes: Hero[] = [];
+  selectedHero: Hero | null = null;
 
-  heroes = Heroes;
-  selectedHero: Hero;
+  constructor(private heroService: HeroService) {}
 
-  constructor() {
-    this.selectedHero = {} as Hero;
+  ngOnInit(): void {
+    this.getHeroes();
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+  }
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes); 
+      
   }
 }

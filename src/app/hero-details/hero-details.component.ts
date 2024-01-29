@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import {NgIf, UpperCasePipe} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Heroes } from '../mock-heroes';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-hero-details',
@@ -12,9 +13,7 @@ import { Heroes } from '../mock-heroes';
 })
 export class HeroDetailsComponent {
 
-  @Input() hero: typeof Heroes[] = [];
+  @Input() hero?: Hero;
 
-  constructor() {}
-    
-
+  
   }
