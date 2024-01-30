@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HeroDetailsComponent } from './hero-details/hero-details.component';
-import {Heroes} from './mock-heroes';
 import { HeroesComponent } from './heroes/heroes.component';
-import { Hero } from './hero';
+import { MessagesComponent } from './messages/messages.component';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeroDetailsComponent , HeroesComponent],
+  imports: [ HeroDetailsComponent , HeroesComponent, MessagesComponent, RouterOutlet, RouterModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Tour des Heros';
-  heroes = Heroes;
-selectedHero?: Hero;
 
+
+  title = 'Tour des Heros';
 }
